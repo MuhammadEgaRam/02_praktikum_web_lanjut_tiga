@@ -40,4 +40,4 @@ Route::prefix('/program')->group(function () {
 //5
 Route::get('/', [AboutController::class, 'about']);
 //6
-Route::get('/kontak', [ContactController::class, 'index']);
+Route::resource('/kontak', ContactController::class, ['only'=> ['index', 'create', 'store']]);

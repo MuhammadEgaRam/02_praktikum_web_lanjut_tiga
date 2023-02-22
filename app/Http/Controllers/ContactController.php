@@ -23,7 +23,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact-us');
     }
 
     /**
@@ -34,7 +34,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $result = [
+            'name' => $request['name'], 
+            'email' => $request['email'],
+            'subject' => $request['subject'],
+            'message' => $request['message']
+        ];
+
+        return view('comment', ['comment' => (object)$result]);
     }
 
     /**
